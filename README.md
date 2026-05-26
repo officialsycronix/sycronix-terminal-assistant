@@ -41,7 +41,7 @@ python3 main.py --help
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/YOUR_USERNAME/sycronix.git
+git clone https://github.com/Ofc SYCRONIX/sycronix.git
 cd sycronix
 
 # 2. Install dependencies
