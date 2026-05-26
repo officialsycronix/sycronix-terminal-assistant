@@ -133,6 +133,12 @@ API Key: {color.success('✓') if api_status else color.error('✗')}[/]""")
         ))
         console.print()
 
+    @app.command()
+    def dev():
+        """SYCRONIX DEV AGENT - TUI mode"""
+        from sycronix.tui.app import run
+        run()
+
     app()
 
 if __name__ == "__main__":

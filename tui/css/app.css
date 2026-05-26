@@ -1,0 +1,332 @@
+Screen {
+    background: #0a0f1a;
+}
+
+StartupScreen {
+    align: center middle;
+    background: #0a0f1a;
+}
+
+MainScreen {
+    background: #0a0f1a;
+}
+
+#app-container {
+    layout: vertical;
+    height: 100%;
+}
+
+/* ─── Status Bar ─────────────────────────────────── */
+#status-bar {
+    dock: top;
+    height: 3;
+    background: #111827;
+    border-bottom: solid #1e293b;
+    layout: horizontal;
+    padding: 0 1;
+}
+
+#status-bar Label {
+    padding: 0 1;
+    margin: 0;
+}
+
+.status-item {
+    min-width: 20;
+    content-align: center middle;
+    padding: 0 1;
+}
+
+.status-label {
+    color: #6b7280;
+}
+
+.status-value {
+    color: #e2e8f0;
+}
+
+.status-agent-active {
+    color: #34d399;
+}
+
+.status-agent-idle {
+    color: #6b7280;
+}
+
+.status-model {
+    color: #00d4ff;
+}
+
+.status-memory {
+    color: #a78bfa;
+}
+
+/* ─── Main Content ───────────────────────────────── */
+#main-content {
+    layout: horizontal;
+    height: 1fr;
+}
+
+/* ─── Sidebar ─────────────────────────────────────── */
+#sidebar {
+    width: 28;
+    min-width: 20;
+    background: #0f172a;
+    border-right: solid #1e293b;
+    layout: vertical;
+    padding: 0;
+}
+
+#sidebar-header {
+    height: 3;
+    content-align: center middle;
+    background: #1a2332;
+    border-bottom: solid #1e293b;
+    color: #00d4ff;
+    text-style: bold;
+}
+
+.sidebar-section {
+    height: 1fr;
+    border-bottom: solid #1e293b;
+    padding: 0 1;
+}
+
+.sidebar-section-title {
+    height: 3;
+    content-align: left middle;
+    color: #6b7280;
+    text-style: bold;
+    border-bottom: solid #1e293b;
+}
+
+.sidebar-content {
+    height: 1fr;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* ─── Terminal Panel ──────────────────────────────── */
+#terminal-panel {
+    width: 1fr;
+    background: #0a0f1a;
+    layout: vertical;
+    padding: 0;
+}
+
+#terminal-header {
+    height: 3;
+    content-align: center middle;
+    background: #111827;
+    border-bottom: solid #1e293b;
+    color: #e2e8f0;
+    text-style: bold;
+}
+
+#terminal-output {
+    height: 1fr;
+    background: #0a0f1a;
+    padding: 0 1;
+    overflow-y: auto;
+}
+
+.terminal-line {
+    margin: 0;
+    padding: 0;
+}
+
+.terminal-prompt {
+    color: #34d399;
+}
+
+.terminal-error {
+    color: #f87171;
+}
+
+.terminal-success {
+    color: #34d399;
+}
+
+.terminal-info {
+    color: #60a5fa;
+}
+
+.terminal-warning {
+    color: #fbbf24;
+}
+
+.terminal-system {
+    color: #6b7280;
+}
+
+.terminal-agent {
+    color: #a78bfa;
+}
+
+.terminal-stream {
+    color: #e2e8f0;
+}
+
+/* ─── Agent Panel ─────────────────────────────────── */
+#agent-panel {
+    width: 32;
+    min-width: 24;
+    background: #0f172a;
+    border-left: solid #1e293b;
+    layout: vertical;
+    padding: 0;
+}
+
+#agent-header {
+    height: 3;
+    content-align: center middle;
+    background: #1a2332;
+    border-bottom: solid #1e293b;
+    color: #a78bfa;
+    text-style: bold;
+}
+
+.agent-section {
+    height: 1fr;
+    border-bottom: solid #1e293b;
+    padding: 0 1;
+}
+
+.agent-section-title {
+    height: 3;
+    content-align: left middle;
+    color: #6b7280;
+    text-style: bold;
+    border-bottom: solid #1e293b;
+}
+
+.agent-thought {
+    color: #a78bfa;
+    margin: 0;
+}
+
+.agent-analysis {
+    color: #fbbf24;
+    margin: 0;
+}
+
+.agent-memory {
+    color: #60a5fa;
+    margin: 0;
+}
+
+/* ─── Input Bar ───────────────────────────────────── */
+#input-container {
+    dock: bottom;
+    height: 5;
+    background: #111827;
+    border-top: solid #1e293b;
+    layout: vertical;
+    padding: 0 1;
+}
+
+#input-bar {
+    height: 3;
+    margin: 0;
+    background: #1a2332;
+    color: #e2e8f0;
+    border: solid #334155;
+    padding: 0 1;
+}
+
+#input-bar:focus {
+    border: solid #00d4ff;
+}
+
+#input-hint {
+    height: 1;
+    color: #6b7280;
+    content-align: left middle;
+    padding: 0 1;
+}
+
+/* ─── Startup Screen ──────────────────────────────── */
+#startup-container {
+    layout: vertical;
+    align: center middle;
+    width: 100%;
+    height: 100%;
+}
+
+#startup-title {
+    color: #00d4ff;
+    text-style: bold;
+    content-align: center middle;
+    height: 5;
+}
+
+#startup-subtitle {
+    color: #6b7280;
+    content-align: center middle;
+    height: 3;
+}
+
+#startup-loading {
+    height: 3;
+    content-align: center middle;
+}
+
+#startup-status {
+    color: #6b7280;
+    content-align: center middle;
+    height: 3;
+}
+
+#startup-version {
+    color: #334155;
+    content-align: center middle;
+    height: 3;
+}
+
+/* ─── Agent Status Indicator ──────────────────────── */
+.agent-indicator {
+    padding: 0 1;
+}
+
+.agent-indicator-thinking {
+    color: #fbbf24;
+}
+
+.agent-indicator-executing {
+    color: #00d4ff;
+}
+
+.agent-indicator-done {
+    color: #34d399;
+}
+
+.agent-indicator-error {
+    color: #f87171;
+}
+
+/* ─── Scrollbar Styling ───────────────────────────── */
+/* ─── Streaming Line ──────────────────────────────── */
+#stream-line {
+    height: auto;
+    background: #0a0f1a;
+    padding: 0 1;
+    color: #e2e8f0;
+}
+
+.terminal-stream {
+    color: #e2e8f0;
+}
+
+/* ─── Scrollbar ───────────────────────────────────── */
+Scrollbar {
+    color: #1e293b;
+}
+
+Scrollbar:hover {
+    color: #334155;
+}
+
+/* ─── Loading Spinner ─────────────────────────────── */
+LoadingIndicator {
+    color: #00d4ff;
+}

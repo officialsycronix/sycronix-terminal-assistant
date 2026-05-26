@@ -41,10 +41,10 @@ python3 main.py --help
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/officialsycronix/sycronix.git
+git clone https://github.com/officialsycronix/sycronix-terminal-assistant.git
 
 # 2. Now go into sycronix directory 
-cd sycronix
+cd sycronix-terminal-assistant
 
 # 3. Install dependencies
 pip install -r requirements.txt

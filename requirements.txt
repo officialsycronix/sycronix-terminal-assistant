@@ -7,3 +7,4 @@ sqlalchemy>=2.0.25
 pyyaml>=6.0.1
 markdown-it-py>=3.0.0
 pygments>=2.17.2
+textual>=8.0.0
