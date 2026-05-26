@@ -41,16 +41,18 @@ python3 main.py --help
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/Ofc SYCRONIX/sycronix.git
+git clone https://github.com/officialsycronix/sycronix.git
+
+# 2. Now go into sycronix directory 
 cd sycronix
 
-# 2. Install dependencies
+# 3. Install dependencies
 pip install -r requirements.txt
 
-# 3. Set up your API key
+# 4. Set up your API key
 python3 setup_api.py
 
-# 4. Launch
+# 5. Launch
 python3 main.py ai
 ```
 
