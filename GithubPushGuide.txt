@@ -1,0 +1,163 @@
+═══════════════════════════════════════════════════════════════
+  GITHUB PUSH GUIDE — Sycronix from Android (Termux)
+  ofx ~ SYCRONIX
+═══════════════════════════════════════════════════════════════
+
+This guide assumes you have Termux installed and the Sycronix
+project already exists at:
+  /mnt/sdcard/Opencode/sycronix/
+
+───────────────────────────────────────────────────
+  STEP 0 — Prerequisites (Termux only)
+───────────────────────────────────────────────────
+
+Run these in Termux if you haven't already:
+
+    pkg update -y && pkg upgrade -y
+    pkg install git -y
+
+Check git is installed:
+
+    git --version
+
+If you see a version number, you're good.
+
+───────────────────────────────────────────────────
+  STEP 1 — Create a GitHub Account
+───────────────────────────────────────────────────
+
+1. Open Chrome on your phone.
+2. Go to https://github.com/signup
+3. Enter email, create password, pick username.
+4. Verify email (check your email inbox).
+5. You now have a GitHub account.
+
+───────────────────────────────────────────────────
+  STEP 2 — Create a New Repository on GitHub
+───────────────────────────────────────────────────
+
+1. Log in to https://github.com
+2. Click the "+" icon (top-right) → "New repository"
+3. Repository name:  sycronix
+4. Description (optional): Intelligent Terminal Assistant
+5. Choose: Public (so anyone can see it)
+6. DO NOT check "Add a README", "Add .gitignore", or "Choose a license"
+7. Click "Create repository"
+
+You'll see a page with a URL like:
+  https://github.com/YOUR_USERNAME/sycronix.git
+
+Copy that URL. You'll need it next.
+
+───────────────────────────────────────────────────
+  STEP 3 — Configure Git in Termux
+───────────────────────────────────────────────────
+
+Tell git who you are:
+
+    git config --global user.name "YourGitHubUsername"
+    git config --global user.email "your@email.com"
+
+Replace with your actual GitHub username and email.
+These appear on your commits.
+
+───────────────────────────────────────────────────
+  STEP 4 — Initialize Git & Push
+───────────────────────────────────────────────────
+
+Run these commands one by one:
+
+    cd /mnt/sdcard/Opencode/sycronix
+
+    git init
+    git add .
+    git commit -m "Initial commit — Sycronix v2.0"
+
+    git remote add origin https://github.com/YOUR_USERNAME/sycronix.git
+    git branch -M main
+    git push -u origin main
+
+When you run `git push`, it will ask for:
+  - Username: your GitHub username
+  - Password: NOT your GitHub password — use a Personal Access Token (PAT)
+
+───────────────────────────────────────────────────
+  STEP 5 — Create a Personal Access Token (PAT)
+───────────────────────────────────────────────────
+
+1. On GitHub, click your profile pic (top-right) → Settings
+2. Scroll down → "Developer settings" (bottom-left)
+3. Click "Personal access tokens" → "Tokens (classic)"
+4. Click "Generate new token (classic)"
+5. Note: GitHub may ask you to confirm your password.
+6. Give it a name (e.g., "Termux Push")
+7. Expiration: choose "No expiration" (or 90 days)
+8. Under "Scopes", check:  repo  (full control)
+9. Scroll down and click "Generate token"
+10. COPY THE TOKEN NOW — it looks like:  ghp_xxxxxxxxxxxxxxxxxxxx
+    (GitHub will NOT show it again)
+
+Now use this token as the password when git push asks.
+
+───────────────────────────────────────────────────
+  STEP 6 — Verify on GitHub
+───────────────────────────────────────────────────
+
+1. Open https://github.com/YOUR_USERNAME/sycronix
+2. You should see all your files there.
+
+───────────────────────────────────────────────────
+  STEP 7 — Future Updates (After Changes)
+───────────────────────────────────────────────────
+
+Whenever you make changes to the code and want to push:
+
+    cd /mnt/sdcard/Opencode/sycronix
+
+    git add .
+    git commit -m "Describe what you changed"
+    git push
+
+Git will remember your credentials for a while
+(if you used the PAT once). If it asks for password
+again, paste the same PAT token.
+
+───────────────────────────────────────────────────
+  QUICK REFERENCE
+───────────────────────────────────────────────────
+
+  git status        → See what files changed
+  git diff          → See exact changes in code
+  git add .         → Stage all changed files
+  git commit -m "msg" → Commit with a message
+  git push          → Push to GitHub
+  git pull          → Pull latest from GitHub
+
+───────────────────────────────────────────────────
+  TROUBLESHOOTING
+───────────────────────────────────────────────────
+
+❌ "Permission denied (publickey)"
+   → You're using SSH. Don't. Use HTTPS URL instead.
+
+❌ "Repository not found"
+   → You haven't created the repo on GitHub yet.
+   → OR the URL is wrong (check your username spelling).
+
+❌ "Authentication failed" when pushing
+   → Use Personal Access Token, NOT your GitHub password.
+
+❌ "fatal: not a git repository"
+   → You forgot to run:  git init
+
+❌ "Nothing to commit"
+   → Run:  git status  to see what's going on.
+
+───────────────────────────────────────────────────
+  DONE!
+───────────────────────────────────────────────────
+
+Your Sycronix project is now on GitHub. Anyone with the
+link can see it (if public) or clone it.
+
+— ofx ~ SYCRONIX

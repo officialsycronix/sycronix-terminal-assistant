@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+*.pyo
+
+# Environment
+.env
+*.db
+*.sqlite3
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Termux / Android
+/data/
+
+# User data
+*.json
+!requirements.txt
+!GithubPushGuide.txt
+
+# Logs
+*.log
