@@ -163,6 +163,6 @@ MIT — see [LICENSE](LICENSE)
 
 <div align="center">
 
-**ofx ~ SYCRONIX**
+**ofc ~ SYCRONIX**
 
 </div>
