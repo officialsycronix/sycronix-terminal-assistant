@@ -8,8 +8,8 @@ from rich.console import Console
 from rich.panel import Panel
 from prompt_toolkit import PromptSession
 from prompt_toolkit.styles import Style
-from sycronix.ai.provider import AIProvider
-from sycronix.ui.theme import color, styled_panel
+ai.provider import AIProvider
+ui.theme import color, styled_panel
 
 FIX_SYSTEM_PROMPT = """You are a Linux error diagnosis expert. Given an error message:
 1. Explain what went wrong in simple terms

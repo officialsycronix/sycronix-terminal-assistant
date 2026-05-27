@@ -10,8 +10,8 @@ from textual.binding import Binding
 from textual.reactive import reactive
 
 from pathlib import Path
-from sycronix.tui.screens.startup import StartupScreen
-from sycronix.tui.screens.main_screen import MainScreen
+tui.screens.startup import StartupScreen
+tui.screens.main_screen import MainScreen
 
 
 CSS_DIR = Path(__file__).parent / "css"

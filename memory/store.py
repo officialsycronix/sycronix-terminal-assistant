@@ -8,7 +8,7 @@ if __name__ != "__main__":
 
 from sqlalchemy import create_engine, Column, Integer, String, Text, DateTime, Float, select
 from sqlalchemy.orm import declarative_base, sessionmaker
-from sycronix.core.config import MEMORY_FILE
+core.config import MEMORY_FILE
 
 Base = declarative_base()
 

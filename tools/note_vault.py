@@ -10,8 +10,8 @@ from rich.panel import Panel
 from rich import box
 from prompt_toolkit import PromptSession
 from prompt_toolkit.styles import Style
-from sycronix.core.config import NOTES_FILE
-from sycronix.ui.theme import color, THEME, styled_panel
+core.config import NOTES_FILE
+ui.theme import color, THEME, styled_panel
 
 prompt_style = Style([("prompt", "bold #fbbf24")])
 psession = PromptSession()
@@ -21,7 +21,7 @@ def run_note_vault():
     notes = _load_notes()
 
     console.print()
-    from sycronix.ui.banner import show_banner
+    ui.banner import show_banner
     show_banner()
     console.print(styled_panel(
         color.primary("Note Vault")

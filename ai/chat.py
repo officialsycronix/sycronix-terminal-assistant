@@ -10,10 +10,10 @@ from rich.live import Live
 from prompt_toolkit import PromptSession
 from prompt_toolkit.styles import Style
 from prompt_toolkit.history import FileHistory
-from sycronix.core.config import HISTORY_FILE, SYCRONIX_DIR
-from sycronix.ui.theme import color, THEME, styled_panel
-from sycronix.memory.store import store
-from sycronix.ai.provider import AIProvider
+core.config import HISTORY_FILE, SYCRONIX_DIR
+ui.theme import color, THEME, styled_panel
+memory.store import store
+ai.provider import AIProvider
 
 CHAT_SYSTEM_PROMPT = """You are Sycronix AI, an intelligent terminal assistant created by OfC SYCRONIX.
 You help users with Linux commands, system administration, programming, and general tech questions.

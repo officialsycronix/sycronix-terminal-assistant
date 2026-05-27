@@ -5,8 +5,8 @@ if __name__ != "__main__":
         sys.path.insert(0, _root)
 
 from typing import Optional
-from sycronix.core.config import get_api_key
-from sycronix.core.logging_setup import logger
+core.config import get_api_key
+core.logging_setup import logger
 
 MODEL = "meta-llama/llama-3.3-70b-instruct:free"
 BASE_URL = "https://openrouter.ai/api/v1"

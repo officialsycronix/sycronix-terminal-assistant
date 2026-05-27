@@ -8,8 +8,8 @@ from rich.console import Console
 from rich.panel import Panel
 from prompt_toolkit import PromptSession
 from prompt_toolkit.styles import Style
-from sycronix.ai.provider import AIProvider
-from sycronix.ui.theme import color, styled_panel
+ai.provider import AIProvider
+ui.theme import color, styled_panel
 
 TRANSLATE_SYSTEM_PROMPT = """Convert the user's natural language request into a Linux command.
 Return ONLY the command, no explanation. If unsure, return the safest approximation."""

@@ -9,9 +9,9 @@ from rich.panel import Panel
 from prompt_toolkit import PromptSession
 from prompt_toolkit.styles import Style
 from prompt_toolkit.history import FileHistory
-from sycronix.core.config import HISTORY_FILE
-from sycronix.ui.theme import color, THEME, styled_panel
-from sycronix.ai.provider import AIProvider
+core.config import HISTORY_FILE
+ui.theme import color, THEME, styled_panel
+ai.provider import AIProvider
 
 SHELL_SYSTEM_PROMPT = """You are a smart terminal assistant. The user wants to execute a command.
 Analyze their natural language request and provide the appropriate Linux command.

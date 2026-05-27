@@ -12,9 +12,9 @@ from rich.panel import Panel
 from rich import box
 from prompt_toolkit import PromptSession
 from prompt_toolkit.styles import Style
-from sycronix.core.config import SYCRONIX_DIR, WORKFLOWS_DIR
-from sycronix.ui.theme import color, THEME, styled_panel
-from sycronix.memory.store import store
+core.config import SYCRONIX_DIR, WORKFLOWS_DIR
+ui.theme import color, THEME, styled_panel
+memory.store import store
 
 prompt_style = Style([("prompt", "bold #ff6b9d")])
 psession = PromptSession()
@@ -34,7 +34,7 @@ def run_workflow_engine():
     console = Console()
 
     console.print()
-    from sycronix.ui.banner import show_banner
+    ui.banner import show_banner
     show_banner()
     console.print(styled_panel(
         color.primary("Workflow Automation Engine")

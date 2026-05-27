@@ -8,7 +8,7 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 from rich import box
-from sycronix.ui.theme import color, THEME, styled_panel
+ui.theme import color, THEME, styled_panel
 
 CREDIT = f"[{THEME['secondary']}]ofx ~ SYCRONIX[/]"
 
