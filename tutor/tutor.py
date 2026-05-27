@@ -12,10 +12,10 @@ from rich import box
 from prompt_toolkit import PromptSession
 from prompt_toolkit.styles import Style
 from datetime import datetime
-core.config import SYCRONIX_DIR, PROGRESS_FILE, LEADERBOARD_FILE
-ui.theme import color, THEME, styled_panel
-ui.banner import show_banner, CREDIT
-tutor.questions import get_questions
+from core.config import SYCRONIX_DIR, PROGRESS_FILE, LEADERBOARD_FILE
+from ui.theme import color, THEME, styled_panel
+from ui.banner import show_banner, CREDIT
+from tutor.questions import get_questions
 
 QUIZ_SIZE = 10
 

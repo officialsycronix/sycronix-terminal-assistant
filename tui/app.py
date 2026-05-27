@@ -10,8 +10,8 @@ from textual.binding import Binding
 from textual.reactive import reactive
 
 from pathlib import Path
-tui.screens.startup import StartupScreen
-tui.screens.main_screen import MainScreen
+from tui.screens.startup import StartupScreen
+from tui.screens.main_screen import MainScreen
 
 
 CSS_DIR = Path(__file__).parent / "css"

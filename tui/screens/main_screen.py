@@ -7,12 +7,12 @@ from textual.binding import Binding
 from textual import work
 from textual.reactive import reactive
 
-tui.widgets.status_bar import StatusBar
-tui.widgets.sidebar import Sidebar
-tui.widgets.terminal_panel import TerminalPanel
-tui.widgets.agent_panel import AgentPanel
-agent.agent import DevAgent
-core.config import get_api_key
+from tui.widgets.status_bar import StatusBar
+from tui.widgets.sidebar import Sidebar
+from tui.widgets.terminal_panel import TerminalPanel
+from tui.widgets.agent_panel import AgentPanel
+from agent.agent import DevAgent
+from core.config import get_api_key
 
 
 class MainScreen(Screen):
@@ -118,7 +118,7 @@ class MainScreen(Screen):
             terminal.write(f"  [#60a5fa]API:[/] {'[#34d399]✓[/]' if self.api_key else '[#f87171]✗[/]'}")
             terminal.write(f"  [#60a5fa]Agent:[/] {'[#34d399]Live[/]' if self.agent_mode else '[#6b7280]Off[/]'}")
         elif cmd == "memory":
-            memory.store import store
+            from memory.store import store
             terminal.write_system("MEMORY")
             terminal.write(f"  [#a78bfa]Entries:[/] [#e2e8f0]{store.get_count()}[/]")
         elif cmd == "create":
@@ -169,7 +169,7 @@ class MainScreen(Screen):
         await self.agent.chat_stream(user_input=text, on_token=on_token, on_action=on_action, on_done=on_done)
 
     async def _scaffold_project(self, project_type, terminal, sidebar, agent_panel, status_bar):
-        generator.scaffolder import Scaffolder
+        from generator.scaffolder import Scaffolder
         s = Scaffolder()
         info = s.get_template_info(project_type)
         if not info:

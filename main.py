@@ -26,11 +26,11 @@ def _run():
     from rich.console import Console
     from rich.table import Table
     from rich import box
-    from ui.theme import color, THEME, styled_panel
-    from ui.banner import show_banner, show_help, CREDIT
-    from core.config import get_api_key, config_path
-    from memory.store import store
-    from core.utils import get_system_info
+    from sycronix.ui.theme import color, THEME, styled_panel
+    from sycronix.ui.banner import show_banner, show_help, CREDIT
+    from sycronix.core.config import get_api_key, config_path
+    from sycronix.memory.store import store
+    from sycronix.core.utils import get_system_info
 
     app = typer.Typer(invoke_without_command=True, add_completion=False)
     console = Console()
@@ -44,44 +44,45 @@ def _run():
     @app.command()
     def ai():
         """AI Chat with OpenRouter"""
-        from ai.chat import run_ai_chat
+        from sycronix.ai.chat import run_ai_chat
         run_ai_chat()
 
     @app.command()
     def shell():
         """Smart Shell with AI"""
-        from shell.smart_shell import run_smart_shell
+        from sycronix.shell.smart_shell import run_smart_shell
         run_smart_shell()
 
     @app.command()
     def tutor():
         """Linux Tutor & Quiz"""
-        from tutor.tutor import run_tutor
+        from sycronix.tutor.tutor import run_tutor
         run_tutor()
 
     @app.command()
     def translate():
         """NL → Command translator"""
-        from tools.translator import run_translator
+        from sycronix.tools.translator import run_translator
         run_translator()
 
     @app.command()
     def fix():
         """Error fixer"""
-        from tools.error_fixer import run_error_fixer
+        from sycronix.tools.error_fixer import run_error_fixer
         run_error_fixer()
 
     @app.command()
     def notes():
+
         """Note vault"""
-        from tools.note_vault import run_note_vault
+        from sycronix.tools.note_vault import run_note_vault
         run_note_vault()
 
     @app.command()
     def dashboard():
         """System dashboard"""
         info = get_system_info()
-        from ui.banner import show_dashboard
+        from sycronix.ui.banner import show_dashboard
         from pathlib import Path
         import json
         notes_file = Path.home() / ".sycronix" / "notes.json"
@@ -105,7 +106,7 @@ def _run():
     @app.command()
     def workflow():
         """Workflow engine"""
-        from workflows.engine import run_workflow_engine
+        from sycronix.workflows.engine import run_workflow_engine
         run_workflow_engine()
 
     @app.command()
@@ -136,7 +137,7 @@ API Key: {color.success('✓') if api_status else color.error('✗')}[/]""")
     @app.command()
     def dev():
         """SYCRONIX DEV AGENT - TUI mode"""
-        from tui.app import run
+        from sycronix.tui.app import run
         run()
 
     app()
