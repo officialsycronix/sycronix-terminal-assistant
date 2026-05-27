@@ -10,9 +10,8 @@ All-in-one AI-powered terminal toolkit for Termux / Linux.
 import sys, os
 
 _sycronix_root = os.path.dirname(os.path.abspath(__file__))
-_parent = os.path.dirname(_sycronix_root)
-if _parent not in sys.path:
-    sys.path.insert(0, _parent)
+if _sycronix_root not in sys.path:
+    sys.path.insert(0, _sycronix_root)
 os.chdir(_sycronix_root)
 
 # Termux fallback
@@ -26,11 +25,11 @@ def _run():
     from rich.console import Console
     from rich.table import Table
     from rich import box
-    from sycronix.ui.theme import color, THEME, styled_panel
-    from sycronix.ui.banner import show_banner, show_help, CREDIT
-    from sycronix.core.config import get_api_key, config_path
-    from sycronix.memory.store import store
-    from sycronix.core.utils import get_system_info
+    from ui.theme import color, THEME, styled_panel
+    from ui.banner import show_banner, show_help, CREDIT
+    from core.config import get_api_key, config_path
+    from memory.store import store
+    from core.utils import get_system_info
 
     app = typer.Typer(invoke_without_command=True, add_completion=False)
     console = Console()
@@ -44,45 +43,45 @@ def _run():
     @app.command()
     def ai():
         """AI Chat with OpenRouter"""
-        from sycronix.ai.chat import run_ai_chat
+        from ai.chat import run_ai_chat
         run_ai_chat()
 
     @app.command()
     def shell():
         """Smart Shell with AI"""
-        from sycronix.shell.smart_shell import run_smart_shell
+        from shell.smart_shell import run_smart_shell
         run_smart_shell()
 
     @app.command()
     def tutor():
         """Linux Tutor & Quiz"""
-        from sycronix.tutor.tutor import run_tutor
+        from tutor.tutor import run_tutor
         run_tutor()
 
     @app.command()
     def translate():
         """NL → Command translator"""
-        from sycronix.tools.translator import run_translator
+        from tools.translator import run_translator
         run_translator()
 
     @app.command()
     def fix():
         """Error fixer"""
-        from sycronix.tools.error_fixer import run_error_fixer
+        from tools.error_fixer import run_error_fixer
         run_error_fixer()
 
     @app.command()
     def notes():
 
         """Note vault"""
-        from sycronix.tools.note_vault import run_note_vault
+        from tools.note_vault import run_note_vault
         run_note_vault()
 
     @app.command()
     def dashboard():
         """System dashboard"""
         info = get_system_info()
-        from sycronix.ui.banner import show_dashboard
+        from ui.banner import show_dashboard
         from pathlib import Path
         import json
         notes_file = Path.home() / ".sycronix" / "notes.json"
@@ -106,7 +105,7 @@ def _run():
     @app.command()
     def workflow():
         """Workflow engine"""
-        from sycronix.workflows.engine import run_workflow_engine
+        from workflows.engine import run_workflow_engine
         run_workflow_engine()
 
     @app.command()
@@ -129,7 +128,7 @@ API Key: {color.success('✓') if api_status else color.error('✗')}[/]""")
             + (color.success("Configured") if api_status else color.error("Not Configured"))
             + color.muted(f"\nConfig path: {config_path()}")
             + color.muted("\n\nRun: python3 /mnt/sdcard/Opencode/sycronix/setup_api.py")
-            + color.muted("\nOr: python3 -m sycronix.setup_api"),
+            + color.muted("\nOr: python3 setup_api.py"),
             "Sycronix Settings"
         ))
         console.print()
@@ -137,7 +136,7 @@ API Key: {color.success('✓') if api_status else color.error('✗')}[/]""")
     @app.command()
     def dev():
         """SYCRONIX DEV AGENT - TUI mode"""
-        from sycronix.tui.app import run
+        from tui.app import run
         run()
 
     app()

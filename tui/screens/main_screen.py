@@ -11,7 +11,6 @@ from tui.widgets.status_bar import StatusBar
 from tui.widgets.sidebar import Sidebar
 from tui.widgets.terminal_panel import TerminalPanel
 from tui.widgets.agent_panel import AgentPanel
-from agent.agent import DevAgent
 from core.config import get_api_key
 
 
@@ -29,7 +28,7 @@ class MainScreen(Screen):
 
     def __init__(self):
         super().__init__()
-        self.agent = DevAgent()
+        self.agent = None
         self.api_key = get_api_key()
 
     def compose(self) -> ComposeResult:
