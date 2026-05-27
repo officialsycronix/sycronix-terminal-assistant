@@ -80,3 +80,4 @@ def show_help():
     console.print(styled_panel(table, "Available Modes"))
     console.print(f"\n  {CREDIT}")
     console.print()
+
